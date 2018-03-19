@@ -8,7 +8,7 @@ bool containsDuplicate(int* nums, int numsSize) {
     if (nums == NULL || numsSize <= 1) {
         return false;
     }
-    sort(nums, numsSize, 0, numsSize - 1);
+    sort(nums, 0, numsSize - 1);
     for (int i = 0; i < numsSize - 1; i++) {
         if (nums[i] == nums[i + 1]) {
             return true;
@@ -17,31 +17,28 @@ bool containsDuplicate(int* nums, int numsSize) {
     return false;
 }
 
-void sort(int* nums, int numsSize, int left, int right) {
-    int i, j, t, temp;
-    if (left > right) {
+void sort(int* nums, int left, int right) {
+    int i, j, key;
+    if (left >= right) {
         return;
     }
-    temp = nums[left];
     i = left;
     j = right;
-    while (i != j) {
-        while (nums[j] >= temp && i < j) {
+    key = nums[left];
+
+    while (i < j) {
+        while (nums[j] >= key && i < j) {
             j--;
         }
-        while (nums[i] <= temp && i < j) {
+        nums[i] = nums[j];
+        while (nums[i] <= key && i < j) {
             i++;
         }
-        if (i < j) {
-            t = nums[i];
-            nums[i] = nums[j];
-            nums[j] = t;
-        }
+        nums[j] = nums[i];
     }
 
-    nums[left] = nums[i];
-    nums[i] = temp;
+    nums[i] = key;
 
-    sort(nums, numsSize, left, i - 1);
-    sort(nums, numsSize, i + 1, right);
+    sort(nums, left, i - 1);
+    sort(nums, i + 1, right);
 }
