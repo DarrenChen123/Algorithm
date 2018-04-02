@@ -19,9 +19,9 @@ bool hasCycle(struct ListNode *head) {
             if (fast->next) {
                 fast = fast->next->next;
             } else {
-                return NULL;
+                return false;
             }
         }
     }
-    return NULL;
+    return false;
 }
