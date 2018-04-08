@@ -15,6 +15,7 @@ Output: 0
 In this case, no transaction is done, i.e. max profit = 0.
 */
 
+//O(n2)
 int maxProfit(int* prices, int pricesSize) {
     if (prices == NULL || pricesSize < 1) {
         return 0;
@@ -28,6 +29,30 @@ int maxProfit(int* prices, int pricesSize) {
                 profit = prices[j] - prices[i];
             }
         }
+    }
+    return profit;
+}
+
+//O(n)
+int maxProfit(int* prices, int pricesSize) {
+    if (prices == NULL || pricesSize < 1) {
+        return 0;
+    }
+
+    int bought = prices[0];
+    int profit = prices[1] - prices[0];
+
+    for (int i = 2; i < pricesSize; i++) {
+        if (bought > prices[i - 1]) {
+            bought = prices[i - 1];
+        }
+        if (prices[i] - bought > profit) {
+            profit = prices[i] - bought;
+        }
+    }
+
+    if (profit < 0) {
+        profit = 0;
     }
     return profit;
 }
