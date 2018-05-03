@@ -38,16 +38,8 @@ struct TreeNode* build(int* preorder, int preorderBegin, int preorderEnd, int* i
     } else {
         index = inorderKeys[10000 + preorder[preorderBegin]];
     }
-    if (index >= inorderBegin + 1) {
-        root->left = build(preorder, preorderBegin + 1, index - inorderBegin + preorderBegin, inorder, inorderBegin, index - 1, preorderKeys, inorderKeys);
-    } else {
-        root->left = NULL;
-    }
-    if (index <= inorderEnd - 1) {
-        root->right = build(preorder, preorderBegin + index - inorderBegin + 1, preorderEnd, inorder, index + 1, inorderEnd, preorderKeys, inorderKeys);
-    } else {
-        root->right = NULL;
-    }
+    root->left = build(preorder, preorderBegin + 1, index - inorderBegin + preorderBegin, inorder, inorderBegin, index - 1, preorderKeys, inorderKeys);
+    root->right = build(preorder, preorderBegin + index - inorderBegin + 1, preorderEnd, inorder, index + 1, inorderEnd, preorderKeys, inorderKeys);
     return root;
 }
 
