@@ -43,15 +43,15 @@ char* digitToCharArr(char digit) {
 
 void combine(char* digits, int from, int to, char* result, char** combinations, int* index) {
 	if (from <= to) {
-	    char *letters = digitToCharArr(digits[from]);
-        int length = strlen(letters);
+	  char *letters = digitToCharArr(digits[from]);
+    int length = strlen(letters);
 		for (int i = 0; i < length; i++) {
 			result[from] = letters[i];
 			combine(digits, from + 1, to, result, combinations, index);
 		}
 	} else {
 		result[from] = '\0';
-		combinations[*index] = malloc(sizeof(strlen(result)));
+		combinations[*index] = (char *)malloc(sizeof(strlen(result)));
 		strcpy(combinations[*index], result);
 		(*index)++;
 	}
@@ -68,8 +68,8 @@ char** letterCombinations(char* digits, int* returnSize) {
         *returnSize *= strlen(digitToCharArr(digits[i]));
     }
     char** ret = (char**) malloc (sizeof(char *) * *returnSize);
-    char* resultStr = malloc(sizeof(length + 1));
-    int* index = malloc(sizeof(int));
+    char* resultStr = (char *)malloc(sizeof(length + 1));
+    int* index = (int *)malloc(sizeof(int));
     *index = 0;
     combine (digits, 0, length - 1, resultStr, ret, index);
     return ret;
