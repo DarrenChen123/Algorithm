@@ -19,6 +19,7 @@ Input: nums = [4,5,6,7,0,1,2], target = 3
 Output: -1
 */
 
+// 1.
 int find(int* nums, int begin, int end) {
     if (begin == end) {
         return begin;
@@ -107,4 +108,49 @@ int search(int* nums, int numsSize, int target) {
             return bSearch(nums, 0, numsSize - 1, target);
         }
     }
+}
+
+//2.
+int bSearch(int* nums, int begin, int end, int target) {
+    if (begin == end) {
+        if (nums[begin] != target) {
+            return -1;
+        } else {
+            return begin;
+        }
+    }
+    if (begin + 1 == end) {
+        if (nums[begin] == target) {
+            return begin;
+        } else if (nums[end] == target) {
+            return end;
+        } else {
+            return -1;
+        }
+    }
+    if (target == nums[(begin + end) / 2]) {
+        return (begin + end) / 2;
+    } else if (target < nums[(begin + end) / 2] && target > nums[begin]) {
+        return bSearch(nums, begin, (begin + end) / 2 - 1, target);
+    } else if (target > nums[(begin + end) / 2] && target < nums[begin]) {
+        return bSearch(nums, (begin + end) / 2 + 1, end, target);
+    } else if (target < nums[(begin + end) / 2] && target < nums[begin] && nums[(begin + end) / 2] > nums[begin]) {
+        return bSearch(nums, (begin + end) / 2 + 1, end, target);
+    } else if (target < nums[(begin + end) / 2] && target < nums[begin] && nums[(begin + end) / 2] < nums[begin]) {
+        return bSearch(nums, begin, (begin + end) / 2 - 1, target);
+    } else if (target > nums[(begin + end) / 2] && target > nums[begin] && nums[(begin + end) / 2] > nums[begin]) {
+        return bSearch(nums, (begin + end) / 2 + 1, end, target);
+    } else {
+        return bSearch(nums, begin, (begin + end) / 2 - 1, target);
+    }
+}
+
+int search(int* nums, int numsSize, int target) {
+    if (numsSize <= 0) {
+        return -1;
+    }
+    if (numsSize == 1) {
+        return nums[0] == target ? 0 : -1;
+    }
+    return bSearch(nums, 0, numsSize - 1, target);
 }
