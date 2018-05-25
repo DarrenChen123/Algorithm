@@ -30,5 +30,6 @@ int coinChange(int* coins, int coinsSize, int amount) {
             }
         }
     }
-    return dp[amount];
+    int ret = dp[amount];
+    return ret;
 }
