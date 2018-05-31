@@ -31,7 +31,6 @@ randomSet.insert(2);
 randomSet.getRandom();
 */
 
-//Hash，放一个数组
 struct kv
 {
     struct kv* next;
@@ -191,7 +190,7 @@ void hash_table_rm(HashTable* ht, char* key)
 
 typedef struct {
     int count;
-    struct HashTable* hash;
+    HashTable* hash;
     int* arr;
 } RandomizedSet;
 
@@ -200,7 +199,7 @@ RandomizedSet* randomizedSetCreate() {
     RandomizedSet *set = (RandomizedSet*) malloc (sizeof(RandomizedSet));
     set->count = 0;
     set->hash = hash_table_new();
-    set->arr = (int*) malloc (sizeof(int) * 1024);
+    set->arr = (int*) malloc (sizeof(int) * 65536);
     return set;
 }
 
@@ -210,17 +209,21 @@ bool randomizedSetInsert(RandomizedSet* obj, int val) {
     sprintf(valStr, "%d", val);
     if (obj && obj->count < INT_MAX) {
         if (hash_table_get(obj->hash, valStr) != -1) {
+            free(valStr);
             return false;
         } else {
-            int res = hash_table_put2(obj->hash, valStr, val);
+            int res = hash_table_put2(obj->hash, valStr, obj->count);
             obj->arr[obj->count++] = val;
             if (res == 0) {
+                free(valStr);
                 return true;
             } else {
+                free(valStr);
                 return false;
             }
         }
     } else {
+        free(valStr);
         return false;
     }
 }
@@ -231,15 +234,22 @@ bool randomizedSetRemove(RandomizedSet* obj, int val) {
     sprintf(valStr, "%d", val);
     if (obj && obj->count > 0) {
         if (hash_table_get(obj->hash, valStr) == -1) {
+            free(valStr);
             return false;
         } else {
-            int temp = obj->arr[hash_table_get(obj->hash, valStr)];
-            obj->arr[hash_table_get(obj->hash, valStr)] = obj->arr[obj->count - 1];
+            char* newDest = (char*) malloc(sizeof(char) * 10);
+            sprintf(newDest, "%d", obj->arr[obj->count - 1]);
+            int temp = hash_table_get(obj->hash, valStr);
+            hash_table_put2(obj->hash, newDest, temp);
+            obj->arr[temp] = obj->arr[obj->count - 1];
             obj->count--;
             hash_table_put2(obj->hash, valStr, -1);
+            free(newDest);
+            free(valStr);
             return true;
         }
     } else {
+        free(valStr);
         return false;
     }
 }
@@ -254,10 +264,9 @@ int randomizedSetGetRandom(RandomizedSet* obj) {
 }
 
 void randomizedSetFree(RandomizedSet* obj) {
-    /*free(obj->keys);
+    hash_table_delete(obj->hash);
     free(obj->arr);
     free(obj);
-    */
 }
 
 /**
