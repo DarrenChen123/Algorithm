@@ -41,14 +41,6 @@ The observations in richer are all logically consistent.
  * Return an array of size *returnSize.
  * Note: The returned array must be malloced, assume caller calls free().
  */
-int louder(int* pair, int* quiet) {
-    if (quiet[pair[0]] > quiet[pair[1]]) {
-        return pair[1];
-    } else {
-        return pair[0];
-    }
-}
-
 int searchLoudAndRich(int** richer, int richerRowSize, int* quiet, int current, int res, int* ret) {
     if (ret[current] != -1) {
         return ret[current];
