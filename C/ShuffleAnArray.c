@@ -1,3 +1,4 @@
+// Easy Collection
 /*
 Shuffle a set of numbers without duplicates.
 

@@ -1,3 +1,4 @@
+// Medium Collection
 /*
 Given a binary tree, return the zigzag level order traversal of its nodes' values. (ie, from left to right, then right to left for the next level and alternate between).
 
@@ -57,7 +58,7 @@ void reverse (int * arr, int count) {
 }
 
 int** zigzagLevelOrder(struct TreeNode* root, int** columnSizes, int* returnSize) {
-        if (root == NULL) {
+    if (root == NULL) {
         *columnSizes = NULL;
         *returnSize = 0;
         return NULL;

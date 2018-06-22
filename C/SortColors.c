@@ -1,3 +1,4 @@
+// Medium Collection
 /*
 Given an array with n objects colored red, white or blue, sort them in-place so that objects of the same color are adjacent, with the colors in the order red, white and blue.
 
@@ -32,7 +33,7 @@ void sortColors(int* nums, int numsSize) {
             nums[i] = 2;
         }
     }
-    free(nums);
+    free(colorsCount);
 }
 
 

@@ -1,3 +1,4 @@
+// Medium Collection
 /*
 Given an array nums of n integers, are there elements a, b, c in nums such that a + b + c = 0? Find all unique triplets in the array which gives the sum of zero.
 
@@ -58,7 +59,7 @@ void sort(int* nums, int left, int right) {
 	i = left;
 	j = right;
 	key = nums[left];
-	
+
 	while (i < j) {
 		while (nums[j] >= key && i < j) {
 			j--;
@@ -69,9 +70,9 @@ void sort(int* nums, int left, int right) {
 		}
 		nums[j] = nums[i];
 	}
-	
+
 	nums[i] = key;
-	
+
 	sort(nums, left, i - 1);
 	sort(nums, i + 1, right);
 }
@@ -99,7 +100,6 @@ int** threeSum(int* nums, int numsSize, int* returnSize) {
 			}
 		}
 	}
-	
+
 	return ret;
 }
-

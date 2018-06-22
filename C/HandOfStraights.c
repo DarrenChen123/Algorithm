@@ -1,3 +1,4 @@
+// Weekly Contest 87
 /*
 Alice has a hand of cards, given as an array of integers.
 

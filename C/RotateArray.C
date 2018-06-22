@@ -1,3 +1,4 @@
+// Easy Collection
 /*
 Rotate an array of n elements to the right by k steps.
 

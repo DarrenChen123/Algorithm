@@ -1,3 +1,4 @@
+// Easy Collection
 /*
 Implement strStr().
 

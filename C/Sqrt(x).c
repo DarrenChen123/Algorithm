@@ -1,3 +1,4 @@
+// Medium Collection
 /*
 Implement int sqrt(int x).
 

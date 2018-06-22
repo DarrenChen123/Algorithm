@@ -1,3 +1,4 @@
+// Weekly Contest 88
 /*
 In a row of seats, 1 represents a person sitting in that seat, and 0 represents that the seat is empty.
 
