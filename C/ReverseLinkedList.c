@@ -1,4 +1,5 @@
 // Easy Collection
+// Bloomberg
 /*
  Reverse a singly linked list.
 
