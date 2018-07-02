@@ -1,4 +1,5 @@
 // Medium Collection
+// Bloomberg
 /*
 Implement int sqrt(int x).
 
