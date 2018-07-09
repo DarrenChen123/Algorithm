@@ -1,4 +1,5 @@
 // Medium Collection
+// Microsoft
 /*
 Given an array of strings, group anagrams together.
 

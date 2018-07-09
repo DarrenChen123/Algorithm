@@ -1,6 +1,8 @@
 // Subscription
 // Bloomberg
 // Amazon
+// Microsoft
+// Yelp
 /*
 Given an input string , reverse the string word by word.
 
