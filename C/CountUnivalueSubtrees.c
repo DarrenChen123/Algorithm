@@ -70,5 +70,7 @@ int countUnivalSubtrees(struct TreeNode* root) {
     int* count = (int*) malloc (sizeof(int));
     *count = 0;
     isUnivalue(root, count);
-    return *count;
+    int ret = *count;
+    free(count);
+    return ret;
 }
