@@ -1,5 +1,6 @@
 // Easy Collection
 // Bloomberg
+// Facebook
 /*
 Given two arrays, write a function to compute their intersection.
 

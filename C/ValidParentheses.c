@@ -1,6 +1,7 @@
 // Easy Collection
 // Bloomberg
 // Microsoft
+// Facebook
 /*
 Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
 

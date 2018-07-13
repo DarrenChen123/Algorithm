@@ -1,5 +1,6 @@
 // Medium Collection
 // Yelp
+// Facebook
 /*
 Given a collection of intervals, merge all overlapping intervals.
 
