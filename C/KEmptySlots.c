@@ -39,9 +39,9 @@ int kEmptySlots(int* flowers, int flowersSize, int k) {
             if (i == right) {
                 int day = (days[left] > days[right]) ? days[left] : days[right];
                 res = (res < day) ? res : day;
-                left = i;
-                right = k + 1 + i;
             }
+            left = i;
+            right = k + 1 + i;
         }
     }
     return (res == INT_MAX) ? -1 : res;
