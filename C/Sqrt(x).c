@@ -1,5 +1,6 @@
 // Medium Collection
 // Bloomberg
+// Google
 /*
 Implement int sqrt(int x).
 
