@@ -25,3 +25,47 @@ Input:
 
 Output: [1,4,8,2,5,9,3,6,7].
 */
+
+struct ZigzagIterator {
+    int* arr;
+    int arrSize;
+    int currentIndex;
+};
+
+struct ZigzagIterator *zigzagIteratorCreate(int* v1, int v1Size, int* v2, int v2Size) {
+    struct ZigzagIterator *iter = (struct ZigzagIterator*) malloc (sizeof(struct ZigzagIterator));
+    iter->arr = (int*) malloc (sizeof(int) * (v1Size + v2Size));
+    iter->arrSize = v1Size + v2Size;
+    iter->currentIndex = -1;
+    int index = 0;
+    for (int i = 0; i < (v1Size > v2Size ? v1Size : v2Size); i++) {
+        if (i < v1Size) {
+            iter->arr[index++] = v1[i];
+        }
+        if (i < v2Size) {
+            iter->arr[index++] = v2[i];
+        }
+    }
+    return iter;
+}
+
+bool zigzagIteratorHasNext(struct ZigzagIterator *iter) {
+    return iter->currentIndex < iter->arrSize - 1;
+}
+
+int zigzagIteratorNext(struct ZigzagIterator *iter) {
+    return iter->arr[++(iter->currentIndex)];
+}
+
+/** Deallocates memory previously allocated for the iterator */
+void zigzagIteratorFree(struct ZigzagIterator *iter) {
+    free(iter->arr);
+    free(iter);
+}
+
+/**
+ * Your ZigzagIterator will be called like this:
+ * struct ZigzagIterator *i = zigzagIteratorCreate(v1, v1Size, v2, v2Size);
+ * while (zigzagIteratorHasNext(i)) printf("%d\n", zigzagIteratorNext(i));
+ * zigzagIteratorFree(i);
+ */
