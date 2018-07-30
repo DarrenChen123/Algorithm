@@ -1,4 +1,5 @@
 // Easy Collection
+// Array and String
 /*
 Implement strStr().
 

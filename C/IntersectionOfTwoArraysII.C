@@ -1,6 +1,7 @@
 // Easy Collection
 // Bloomberg
 // Facebook
+// Hash Table
 /*
 Given two arrays, write a function to compute their intersection.
 

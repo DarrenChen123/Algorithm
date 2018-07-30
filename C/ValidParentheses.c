@@ -3,6 +3,7 @@
 // Microsoft
 // Facebook
 // Google
+// Queue & Stack
 /*
 Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
 

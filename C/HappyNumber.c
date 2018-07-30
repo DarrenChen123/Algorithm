@@ -1,4 +1,5 @@
 // Medium Collection
+// Hash Table
 /*
 Write an algorithm to determine if a number is "happy".
 

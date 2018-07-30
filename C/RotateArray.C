@@ -1,4 +1,5 @@
 // Easy Collection
+// Array and String
 /*
 Rotate an array of n elements to the right by k steps.
 
