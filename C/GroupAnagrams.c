@@ -1,6 +1,7 @@
 // Medium Collection
 // Microsoft
 // Yelp
+// Hash Table
 /*
 Given an array of strings, group anagrams together.
 
