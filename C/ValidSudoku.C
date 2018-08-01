@@ -1,4 +1,5 @@
 // Easy Collection
+// Hash Table
 /*
 Determine if a Sudoku is valid, according to: Sudoku Puzzles - The Rules.
 

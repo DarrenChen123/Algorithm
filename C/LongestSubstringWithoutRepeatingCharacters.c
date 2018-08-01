@@ -1,5 +1,6 @@
 // Medium Collection
 // Yelp
+// Hash Table
 /*
 Given a string, find the length of the longest substring without repeating characters.
 
