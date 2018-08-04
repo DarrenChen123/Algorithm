@@ -1,5 +1,6 @@
 // Subscription
 // Google
+// Trie
 /*
 Given a set of words (without duplicates), find all word squares you can build from them.
 

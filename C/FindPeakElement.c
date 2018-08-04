@@ -1,4 +1,5 @@
 // Medium Collection
+// Binary Search 
 /*
 A peak element is an element that is greater than its neighbors.
 

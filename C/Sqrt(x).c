@@ -1,6 +1,7 @@
 // Medium Collection
 // Bloomberg
 // Google
+// Binary Search
 /*
 Implement int sqrt(int x).
 
