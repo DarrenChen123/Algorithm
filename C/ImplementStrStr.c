@@ -1,5 +1,6 @@
 // Easy Collection
 // Array and String
+// Facebook
 /*
 Implement strStr().
 

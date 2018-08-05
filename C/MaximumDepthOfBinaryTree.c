@@ -1,4 +1,5 @@
 // Easy Collection
+// Binary Tree
 /*
 Given a binary tree, find its maximum depth.
 

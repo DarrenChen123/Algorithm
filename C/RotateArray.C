@@ -1,5 +1,6 @@
 // Easy Collection
 // Array and String
+// Amazon
 /*
 Rotate an array of n elements to the right by k steps.
 

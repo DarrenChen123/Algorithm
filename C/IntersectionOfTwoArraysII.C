@@ -2,6 +2,7 @@
 // Bloomberg
 // Facebook
 // Hash Table
+// Binary Search
 /*
 Given two arrays, write a function to compute their intersection.
 

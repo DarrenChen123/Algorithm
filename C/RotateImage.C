@@ -14,6 +14,7 @@ char* rotateImage(char* input, int width, int height) {
 
 // Easy Collection
 // Microsoft
+// Amazon
 /*
 You are given an n x n 2D matrix representing an image.
 

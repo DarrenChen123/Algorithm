@@ -1,4 +1,7 @@
 // Medium Collection
+// Binary Search
+// Facebook
+// Google
 /*
 Implement pow(x, n), which calculates x raised to the power n (xn).
 

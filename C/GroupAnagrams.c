@@ -2,6 +2,8 @@
 // Microsoft
 // Yelp
 // Hash Table
+// Amazon
+// Facebook
 /*
 Given an array of strings, group anagrams together.
 
