@@ -1,5 +1,6 @@
 // Easy Collection
 // Binary Tree
+// LinkedIn
 /*
 Given a binary tree, find its maximum depth.
 

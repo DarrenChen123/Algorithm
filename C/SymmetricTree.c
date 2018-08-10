@@ -1,6 +1,7 @@
 // Easy Collection
 // Amazon
 // Binary Tree
+// LinkedIn
 /*
 Given a binary tree, check whether it is a mirror of itself (ie, symmetric around its center).
 
