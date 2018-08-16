@@ -1,5 +1,6 @@
 // Subscription
 // Facebook
+// LinkedIn
 /*
 Given two sparse matrices A and B, return the result of AB.
 
