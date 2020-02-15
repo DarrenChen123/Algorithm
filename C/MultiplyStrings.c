@@ -51,5 +51,6 @@ char * multiply(char * num1, char * num2){
 		ret[charIndex++] = value[valueIndex++] + '0';
 	}
 	ret[charIndex] = '\0';
+	free(value);
 	return ret;
 }
