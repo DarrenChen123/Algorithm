@@ -22,9 +22,29 @@ Could you optimize your algorithm to use only O(k) extra space?
  */
 
 int* getRow(int rowIndex, int* returnSize){
-	int *colSizes = (int *)malloc(sizeof(int) * )
-	int **triangle = generate(rowIndex, int **columnSizes);
-	*returnSize = rowIndex;
-	int *ret = (int *)malloc(sizeof(*returnSize));
-	
+    *returnSize = rowIndex + 1;
+	int *last = (int *)malloc(sizeof(int) * (*returnSize));
+	int *current = (int *)malloc(sizeof(int) * (*returnSize));
+    memset(last, 0, sizeof(int) * (*returnSize));
+    memset(current, 0, sizeof(int) * (*returnSize));
+	if (rowIndex < 0) {
+		return NULL;
+	}
+	for (int i = 0;i <= rowIndex;i++) {
+		if (i == 0) {
+			last[0] = 1;
+			current[0] = 1;
+		} else {
+            memcpy(last, current, sizeof(int) * i);
+			for (int j = 0;j <= i;j++) {
+				if (j == 0) {
+					current[j] = 1;
+				} else {
+					current[j] = last[j - 1] + last[j];
+				}
+			}
+		}
+	}
+    free(last);
+	return current;
 }
