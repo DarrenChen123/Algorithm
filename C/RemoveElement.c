@@ -43,13 +43,15 @@ for (int i = 0; i < len; i++) {
 int removeElement(int* nums, int numsSize, int val){
     int i = 0;
     int j = 0;
+    
     while (i < numsSize && j < numsSize) {
-        while (nums[j] == val && j < numsSize) {
+        while (j < numsSize && nums[j] == val) {
             j++;
         }
         if (j < numsSize) {
             nums[i++] = nums[j++];
         }
     }
+    
     return i;
 }
