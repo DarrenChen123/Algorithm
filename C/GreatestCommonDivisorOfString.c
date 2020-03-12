@@ -29,5 +29,7 @@ char * gcdOfStrings(char * str1, char * str2){
 	char *ret = (char *)malloc(sizeof(char) * (length + 1));
 	strncpy(ret, str1, length);
 	ret[length] = '\0';
+	free(total2);
+	free(total1);
 	return ret;
 }
